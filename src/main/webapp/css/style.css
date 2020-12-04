@@ -1,0 +1,242 @@
+*
+{
+    box-sizing: border-box;
+    font: normal 12pt 'Noto Sans KR', sans-serif;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+header{
+    border-bottom: 1px solid #BDBDBD;
+    height: 100px;
+}
+
+header, .main_section, footer{
+    margin: 10px auto;
+    background: #FFFFFF;
+}
+
+.header_section, .footer_div{
+    width: 920px;
+    margin: 0px auto;
+}
+
+.logo_section{
+    padding-top: 30px;
+    float: left;
+    font: normal 40pt 'Acme', sans-serif;
+}
+
+.info_section{
+    padding-top: 60px;
+    float: right;
+}
+
+.search_div, .session_div{
+    float: left;
+}
+
+.search_div{
+    margin-right: 10px;
+}
+
+.session_div{
+    margin-right: 10px;
+}
+
+.main_section{
+    width: 1000px;
+    height: 1800px;
+}
+
+.top_section{
+    margin: 0px auto;
+    width: 940px;
+    padding: 20px;
+    height: 50px;
+}
+
+.info_div{
+    float: left;
+}
+
+.category_div{
+    float: right;
+}
+
+
+.bot_section{
+    padding-top: 30px;
+    height: 1700px;
+    text-align: center;
+}
+
+.bot_section, .page_section{
+    float: left;
+    width: 1000px;
+}
+
+.book_ul{
+
+    width: 1000px;
+    height: 1670px;
+    margin: auto;
+    text-align: center;
+    list-style:none;
+    display: inline-block;
+    padding: 0px;
+    padding-left: 37px;
+}
+
+.book_ul li{
+
+
+    float: left;
+    padding:5px;
+    margin: 2px;
+    width: 150px;
+    height: 270px;
+}
+
+.plattformName{
+    font: normal 9pt 'Noto Sans KR', sans-serif;
+    height: 20px;
+}
+
+.img_div{
+    display: inline-block;
+    height: 190px;
+    vertical-align: bottom;
+}
+
+.book_img{
+    box-shadow: #BDBDBD 5px 5px 5px;
+    width: 125px;
+    height: 185px;
+}
+
+.bookName{
+    margin-top: 5px;
+}
+
+li a{
+    font: normal 9pt 'Noto Sans KR', sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+
+li a:hover{
+    color: deepskyblue
+}
+
+.page_section{
+    text-align: center;
+    height: 50px;
+}
+
+.page_section a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.page_section a:hover{
+    color: deepskyblue
+}
+
+
+.footer_div{
+    padding-right: 10px;
+}
+
+footer{
+    border-top: 1px solid #BDBDBD;
+    padding: 10px;
+    text-align: right;
+    height: 100px;
+}
+
+.ajaxText{
+    color: red;
+}
+
+/*
+*
+*Login.jsp
+*
+*
+ */
+.wrap {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-wrap {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+}
+.button-wrap {
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 600px 9px #fcae8f;
+    border-radius: 30px;
+}
+.togglebtn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit {
+    width: 70%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+#login {
+    left: 50px;
+}
