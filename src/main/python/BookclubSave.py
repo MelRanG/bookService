@@ -1,13 +1,12 @@
 import time
-import bookDB
-import listName
+import BookDb
+import CategorySplit
 import re
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, \
     ElementClickInterceptedException, TimeoutException
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 newList = []
@@ -24,11 +23,11 @@ wait = WebDriverWait(driver, 10)
 
 def get_titles():
     if __name__ == '__main__':
-        mysql_controller = bookDB.MysqlController('localhost', 'root', '1234', 'bookplattform')
+        mysql_controller = BookDb.MysqlController('localhost', 'root', '1234', 'bookplattform')
 
         for idx, category in enumerate(newList):
             for index, name in enumerate(category):
-                mysql_controller.insert_bookInfo(name, listName.NEW_CATEGORIES[idx], imgList[idx][index], hrefList[idx][index], 'BOOKCLUB', introList[idx][index])
+                mysql_controller.insert_bookInfo(name, CategorySplit.NEW_CATEGORIES[idx], imgList[idx][index], hrefList[idx][index], 'BOOKCLUB', introList[idx][index])
 
 
 # 카테고리 재배포
@@ -66,8 +65,7 @@ def maching_category(bookList, imgLink, aLink, i, bookIntro):
 
 
 def no_space(text):
-    text1 = re.sub('\n', '', str(text))
-    return text1
+    return re.sub('\n', '', str(text))
 
 
 def get_info():
@@ -75,7 +73,7 @@ def get_info():
     imgLink = []
     aLink = []
     bookIntro = []
-    for i, v in enumerate(listName.BOOKCLUB_CATEGORIES_NAME):
+    for i, v in enumerate(CategorySplit.BOOKCLUB_CATEGORIES_NAME):
         titles = []
         img = []
         ahref = []
@@ -83,7 +81,7 @@ def get_info():
 
         for j in range(1, 10):
             driver.get('http://bookclub.yes24.com/BookClub/BcCateSub?OrderBy=BEST&FilterBy=' +
-                       listName.BOOKCLUB_CATEGORIES_KEY[
+                       CategorySplit.BOOKCLUB_CATEGORIES_KEY[
                            i] + '&pageNo=' + str(j) + '&title=' + str(v))
             time.sleep(1.0)
             html = driver.page_source

@@ -13,4 +13,5 @@ public interface BookService {
     public List<Book> getRidiResult(String result);
     public List<Mbti> getMbti(Integer start, String mbtiKey);
     public int getMbtiCount(String mbtiKey);
+    public List<Book> getCategoryGroup();
 }

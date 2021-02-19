@@ -1,14 +1,13 @@
 package controller;
 
-import dto.User_Info;
+import dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import service.User_InfoService;
+import service.UserInfoService;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,11 +16,11 @@ import java.util.List;
 
 
 @Controller
-public class User_InfoController {
-    private final User_InfoService user_infoService;
+public class UserController {
+    private final UserInfoService user_infoService;
 
     @Autowired
-    public User_InfoController(User_InfoService user_infoService){
+    public UserController(UserInfoService user_infoService){
         this.user_infoService = user_infoService;
     }
 
@@ -31,10 +30,10 @@ public class User_InfoController {
     }
 
     @PostMapping(path = "/register")
-    public String register(@ModelAttribute User_Info user_info){
-        System.out.println(user_info);
-        try {
-            user_infoService.insertUser_info(user_info);
+    public String register(@ModelAttribute User user_){
+        System.out.println(user_);
+        try {user_infoService.insertUserInfo(user_);
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -44,15 +43,15 @@ public class User_InfoController {
     @GetMapping(path = "/register/idCheck")
     @ResponseBody
     public int idCheck(@RequestParam("userId") String userId){
-        System.out.println("checkId = " + user_infoService.checkId(userId));
-        return user_infoService.checkId(userId);
+        System.out.println("checkId = " + user_infoService.findById(userId));
+        return user_infoService.findById(userId);
     }
 
     @PostMapping(path = "/login")
     public String login(@RequestParam(name = "userId")String userId,
                       @RequestParam(name = "password")String password,
                       HttpServletRequest request, ModelMap model) throws NoSuchAlgorithmException {
-        List<User_Info> userInfo = user_infoService.checkLogin(userId);
+        List<User> userInfo = user_infoService.checkLogin(userId);
 
         if(userInfo.isEmpty() == false){
             String cPwd = userInfo.get(0).getPassword();
@@ -81,7 +80,7 @@ public class User_InfoController {
             return "login";
         }
 
-        return "redirect:/list";
+        return "redirect:/list?user=" + userId;
     }
 
     @RequestMapping(value = "/joinForm")

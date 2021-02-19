@@ -1,8 +1,5 @@
-let userId = document.getElementById("userId");
-    userId.addEventListener("blur", doubleCheck);
-
-let pwCheck = document.getElementById("pwCheck");
-    pwCheck.addEventListener("blur", checkPw);
+document.getElementById("userId").addEventListener("blur", doubleCheck);
+document.getElementById("pwCheck").addEventListener("blur", checkPw);
 
 function doubleCheck(){
     const req = new XMLHttpRequest();

@@ -10,7 +10,7 @@
                 <div class="info_div">${userId}님 환영합니다.</div>
         </c:if>
         <div class="category_div">
-            <button onclick="location.href='mbti'">MBTI추천</button>
+            <button onclick="location.href='mbti'" class="btn-info">MBTI추천</button>
             <form method="get" action="list">
             <select name="book_category" onchange="formChange(this.form)">
                 <option value="인문/역사/예술" <c:if test="${book_category eq '인문/역사/예술'}">selected='selected'</c:if> >인문/역사/예술</option>

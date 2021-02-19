@@ -1,11 +1,8 @@
 import time
-import bookDB
-import listName
-import pandas as pd
-import numpy as np
+import BookDb
+import CategorySplit
 
 from selenium import webdriver
-from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, \
     ElementClickInterceptedException, TimeoutException
 from selenium.webdriver.common.by import By
@@ -13,18 +10,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 webdriver_options = webdriver.ChromeOptions()
-webdriver_options .add_argument('headless')
 driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe', options=webdriver_options)
 #driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe')
 wait = WebDriverWait(driver, 5)
 
 def insertBook(bookList, imgLink, aLink, bookIntro):
     if __name__ == '__main__':
-        mysql_controller = bookDB.MysqlController('localhost', 'root', '1234', 'bookplattform')
+        mysql_controller = BookDb.MysqlController('localhost', 'root', '1234', 'bookplattform')
         for i, val in enumerate(bookList):
             for j, name in enumerate(val):
                 mysql_controller.insert_bookInfo(name,
-                                                 listName.NEW_CATEGORIES[i],
+                                                 CategorySplit.NEW_CATEGORIES[i],
                                                  imgLink[i][j],
                                                  aLink[i][j],
                                                  'RIDI',
@@ -35,21 +31,21 @@ def get_info():
     imgLink = []
     aLink = []
     bookIntro = []
-    for idx, val in enumerate(listName.RIDI_CATEGORIES):
+    for idx, val in enumerate(CategorySplit.RIDI_CATEGORIES):
         titles = []
         img = []
         ahref = []
         intro = []
 
-        for j in range(1, 9):
-            driver.get("https://select.ridibooks.com/categories/" + str(val) + "?page=" + str(j))
+        for j in range(1, 2):
+            driver.get("https://select.ridibooks.com/categories/" + str(val) + "?sort=recent&page=" + str(j))
             time.sleep(1.0)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(0.5)
 
             current_url = driver.current_url
             # 빈페이지일시 다음카테고리로 넘어감
-            if current_url != ("https://select.ridibooks.com/categories/" + str(val) + "?page=" + str(j)):
+            if current_url != ("https://select.ridibooks.com/categories/" + str(val) + "?sort=recent&page=" + str(j)):
                 print("currentURL이 아닙니다.")
                 break
 
@@ -58,20 +54,11 @@ def get_info():
                 try:
                     # 스크롤을 내려 각각의 도서를 클릭한다
                     print("{}카테고리 {}페이지 {}번째 도서".format(val, j, i))
-                    time.sleep(1.0)
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
                     wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/main/div[2]/ul/li[" + str(i) + "]")))
                     time.sleep(1.0)
                     driver.find_element_by_xpath("//*[@id='app']/main/div[2]/ul/li[" + str(i) + "]").click()
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME, "TextTruncate")))
 
-                # 도서의 총 갯수가 24개 미만인 경우
-                except NoSuchElementException as e:
-                    print("NoSuchElementException 발생: ", i, e)
-                    break
-                except ElementNotInteractableException as e:
-                    print("ElementNotInteractableException 발생: ",i,e)
                 except ElementClickInterceptedException as e:
                     print("ElementClickInterceptedException 발생: ", i, e)
                     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -80,8 +67,6 @@ def get_info():
                     wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/main/div[2]/ul/li[" + str(i) + "]")))
                     driver.find_element_by_xpath("//*[@id='app']/main/div[2]/ul/li[" + str(i) + "]").click()
                     print("도서제목클릭 실행완료 후 함수실행")
-                    # intro.append(insert_data(intro, val, i, j))
-                    # print("함수실행완료")
                 except TimeoutException:
                     break
                 #도서제목 클릭 후 책 정보를 가져온다.
@@ -99,7 +84,6 @@ def get_info():
                     print("data: ", len(data))
                     if data is None:
                         print("None 발생 category번호: {} 페이지번호: {} 도서번호: {}".format(val, j, i))
-                        data = "Null"
                     driver.back()
 
 

@@ -38,7 +38,6 @@ public class BookServiceImpl implements BookService {
         List<Mbti> mbti = bookDao.selectMbtiAll(start, BookService.LIMIT, mbtiKey);
         return mbti;
     }
-
     @Override
     public int getCount(String category) {
         return bookDao.selectCount(category);
@@ -47,5 +46,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public int getMbtiCount(String mbtiKey) {
         return bookDao.selectMbtiCount(mbtiKey);
+    }
+
+    @Override
+    public List<Book> getCategoryGroup() {
+        return bookDao.selectBookGroupCategory();
     }
 }

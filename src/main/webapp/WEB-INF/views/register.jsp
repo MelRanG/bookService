@@ -5,7 +5,6 @@
 <head>
     <title>회원가입 화면</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="../../css/style.css" type="text/css" rel="stylesheet">
     <style>
         #wrap{
             margin-top: 100px;
@@ -148,8 +147,8 @@
         <input id="register" type="submit" value="가입"/>  <a href="list"><input type="button" value="취소"></a>
     </form>
 </div>
-</body>
 <script src ="../../js/register.js" type="text/javascript"></script>
+</body>
 </html>
 
 

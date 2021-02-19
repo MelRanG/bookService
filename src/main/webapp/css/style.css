@@ -35,6 +35,9 @@ header, .main_section, footer{
     float: right;
 }
 
+#popoverHiddenContent, #popoverHiddenTitle{
+    display: none;
+}
 .search_div, .session_div{
     float: left;
 }
