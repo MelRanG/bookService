@@ -109,7 +109,6 @@ def get_info():
     insertBook(bookList, imgLink, aLink, bookIntro)
 
 
-
 def insert_intro(intro, categoryNum, bookNum, pageNum):
     print("insert 진입")
     data = driver.find_element_by_class_name("TextTruncate").text

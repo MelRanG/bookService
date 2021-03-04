@@ -66,9 +66,4 @@ public class BookDao {
         String sql = MBTI_SELECT_COUNT + query;
         return jdbc.queryForObject(sql, Collections.emptyMap(), Integer.class);
     }
-
-    public List<Book> selectBookGroupCategory(){
-        return jdbc.query(SELECT_BOOK_GROP_CATEGORY, Collections.emptyMap(), rowMapper);
-    }
-
 }

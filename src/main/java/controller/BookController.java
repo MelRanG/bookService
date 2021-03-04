@@ -44,7 +44,7 @@ public class BookController {
 
         model.addAttribute("book_category", book_category);
         model.addAttribute("list", bookList);
-        //model.addAttribute("msg", message);
+        model.addAttribute("msg", message);
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
         model.addAttribute("totalPages", totalPages);

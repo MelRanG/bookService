@@ -26,11 +26,11 @@ public class MessageInfoServiceImpl implements MessageInfoService {
     }
 
     @Override
-    public boolean insertMessage() {
+    public void insertMessage() {
         String msg = get_message();
+        deleteMessage();
         if ("".equals(msg)){
             System.out.println("false");
-            return false;
         }
         else{
             String date = get_date();
@@ -38,14 +38,21 @@ public class MessageInfoServiceImpl implements MessageInfoService {
             message.setMessage(get_message());
             message.setSendDate(date);
             messageDao.insert(message);
-            return true;
+        }
+    }
+
+    public void deleteMessage(){
+        int count = messageDao.selectMessageCount();
+        while(count > 5){
+            messageDao.deleteMessage();
+            count = messageDao.selectMessageCount();
+            System.out.println("count: " + count);
         }
     }
 
     @Override
     public List<Message> selectMessage() {
         List<Message> msg = messageDao.selectMessage();
-        insertMessage();
         return msg;
     }
 
@@ -75,14 +82,9 @@ public class MessageInfoServiceImpl implements MessageInfoService {
         return sb;
     }
 
-    public String get_date(){
+    public static String get_date(){
         Date d = new Date();
-
-        String s = d.toString();
-        System.out.println("현재날짜 : "+ s);
-
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
         return sdf.format(d);
     }
 }

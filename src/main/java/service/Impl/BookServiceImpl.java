@@ -48,8 +48,4 @@ public class BookServiceImpl implements BookService {
         return bookDao.selectMbtiCount(mbtiKey);
     }
 
-    @Override
-    public List<Book> getCategoryGroup() {
-        return bookDao.selectBookGroupCategory();
-    }
 }

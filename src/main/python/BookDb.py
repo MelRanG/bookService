@@ -19,28 +19,7 @@ class MysqlController:
 
     def select_category(self, plattform):
         result = []
-        # for i in CategorySplit.NEW_CATEGORIES:
-        #     sql = 'SELECT bookName, img, href, bookintro, category, plattform FROM book_info WHERE category = "인문/역사/예술" AND plattform = "' + plattform +'" ORDER BY bookNo DESC limit 30'
-        #     self.curs.execute(sql)
-        #     result.append(list(self.curs.fetchall()))
-
         sql = 'SELECT bookName, img, href, category, plattform FROM book_info WHERE category = "인문/역사/예술" AND plattform = "' + plattform +'" ORDER BY bookNo DESC limit 30'
         self.curs.execute(sql)
         result.append(list(self.curs.fetchall()))
         return result
-
-    def select_group_by_category(self):
-        sql = """SELECT bookName, category, plattform
-                FROM (SELECT a.*
-                , @rn := CASE WHEN category != @category THEN 1 ELSE @rn + 1 END rn
-                , @category := category x
-                FROM book_info a
-                , (SELECT @category := '', @rn := 0) b
-                ORDER BY category, bookNo DESC
-                ) a
-                WHERE rn <= 3"""
-
-        self.curs.execute(sql)
-        select = list(self.curs.fetchall())
-        self.conn.commit()
-        return select

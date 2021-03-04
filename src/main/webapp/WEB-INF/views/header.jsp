@@ -45,13 +45,13 @@
                                             <th>날짜</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-<%--                                        <c:forEach items="${msg}" var="m">--%>
-<%--                                            <tr>--%>
-<%--                                                <td>${m.message}</td>--%>
-<%--                                                <td>${m.sendDate}</td>--%>
-<%--                                            </tr>--%>
-<%--                                        </c:forEach>--%>
+                                    <tbody id="messageBody">
+                                        <c:forEach items="${msg}" var="m">
+                                            <tr>
+                                                <td>${m.message}</td>
+                                                <td class="date_td">${m.sendDate}</td>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

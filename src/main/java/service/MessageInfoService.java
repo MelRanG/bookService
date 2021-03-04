@@ -5,6 +5,6 @@ import dto.Message;
 import java.util.List;
 
 public interface MessageInfoService {
-    public boolean insertMessage();
+    public void insertMessage();
     public List<Message> selectMessage();
 }
