@@ -49,7 +49,6 @@ public class MessageDao {
     public int deleteMessage(){
         String date = get_date();
         String sql = "DELETE FROM message_info where DATE_FORMAT(sendDate, '%y-%m-%d') < " + date + " limit 1";;
-        System.out.println("sql: " + sql);
         return jdbc.update(sql, Collections.emptyMap());
     }
 }

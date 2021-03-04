@@ -43,7 +43,7 @@ public class MessageInfoServiceImpl implements MessageInfoService {
 
     public void deleteMessage(){
         int count = messageDao.selectMessageCount();
-        while(count > 5){
+        while(count > 4){
             messageDao.deleteMessage();
             count = messageDao.selectMessageCount();
             System.out.println("count: " + count);
