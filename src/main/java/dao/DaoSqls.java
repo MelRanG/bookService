@@ -9,5 +9,4 @@ public class DaoSqls {
     public static final String MBTI_SELECT = "SELECT m.mbtiNo, m.bookNo, b.bookName, b.category , b.img, b.href, b.plattform, m.mbtiKey FROM mbti_info AS m JOIN book_info AS b ON m.bookNO = b.bookNo WHERE m.mbtiKey = :mbtiKey ORDER BY mbtiNo limit :start, :limit";
     public static final String MBTI_SELECT_COUNT = "SELECT count(*) FROM mbti_info WHERE mbtiKey LIKE";
     public static final String MESSAGE_SELECT = "SELECT * FROM message_info ORDER BY mNo DESC";
-    public static final String MESSAGE_COUNT_SELECT = "SELECT count(*) FROM message_info";
 }

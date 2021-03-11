@@ -6,7 +6,10 @@ from selenium.common.exceptions import NoSuchElementException, ElementNotInterac
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import BookDb
+import sys
+sys.path.insert(0, 'C:\\Users\\se\\IdeaProjects\\bookservice\\src\\main')
+sys.path.insert(0, 'C:\\Users\\se\\IdeaProjects\\bookservice\\src\\main\\python')
+from python import BookDb
 
 a = [('딸에게 보내는 심리학 편지 (10만 부 기념 스페셜 에디션)', 'https://img.ridicdn.net/cover/2823000014/xxlarge?dpi=xxhdpi',
       'https://select.ridibooks.com/book/2823000014', '인문/사회/역사', 'RIDI'), (
@@ -26,7 +29,7 @@ plat = []
 class TestQuery(unittest.TestCase):
     def setUp(self):
         webdriver_options = webdriver.ChromeOptions()
-        webdriver_options.add_argument('headless')
+        #webdriver_options.add_argument('headless')
         self.driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe', options=webdriver_options)
         self.wait = WebDriverWait(self.driver, 5)
         self.controller = BookDb.MysqlController('localhost', 'root', '1234', 'bookplattform')
@@ -37,7 +40,7 @@ class TestQuery(unittest.TestCase):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(0.5)
 
-        for i in range(1, 25):
+        for i in range(1, 2):
             # 스크롤을 내려 각각의 도서를 클릭한다
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             self.wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/main/div[2]/ul/li[" + str(i) + "]")))
@@ -56,7 +59,7 @@ class TestQuery(unittest.TestCase):
 
         total.append(titles)
         total.append(img)
-        # total.append(intro)
+        total.append(intro)
         total.append(ahref)
         total.append(category)
         total.append(plat)
@@ -65,7 +68,6 @@ class TestQuery(unittest.TestCase):
         for i in range(len(total[0])):
             result1 = ()
             for j in range(len(total)):
-
                 result1 += tuple([total[j][i]])
             result.append(result1)
         db = self.controller.select_category("RIDI")

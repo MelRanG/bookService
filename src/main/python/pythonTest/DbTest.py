@@ -1,5 +1,7 @@
 import unittest
-import BookDb
+
+from python import BookDb
+
 
 
 class TestQuery(unittest.TestCase):
@@ -8,6 +10,13 @@ class TestQuery(unittest.TestCase):
 
     def test_query(self):
         print(self.controller.select_category("bookCLUB"))
+
+    def test_delete(self):
+        count = self.controller.selectMessageCount()[0]
+        while count > 4:
+            self.controller.deleteMessage()
+            count = self.controller.selectMessageCount()[0]
+            print(count)
 
 if __name__ == '__main__':
     unittest.main()
