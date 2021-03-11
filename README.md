@@ -1,7 +1,5 @@
 # bookService
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 
 [![bookService](https://img.youtube.com/vi/p55YEyQ-RiQ/0.jpg)](https://www.youtube.com/watch?v=p55YEyQ-RiQ)
 
