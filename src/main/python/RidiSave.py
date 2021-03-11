@@ -14,7 +14,6 @@ from datetime import datetime
 webdriver_options = webdriver.ChromeOptions()
 webdriver_options .add_argument('headless')
 driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe', options=webdriver_options)
-#driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe')
 wait = WebDriverWait(driver, 5)
 
 

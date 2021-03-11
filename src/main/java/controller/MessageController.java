@@ -1,6 +1,4 @@
 package controller;
-import dto.Mbti;
-import dto.Book;
 import dto.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

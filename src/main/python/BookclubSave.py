@@ -13,9 +13,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe')
-# webdriver_options = webdriver.ChromeOptions()
-# webdriver_options .add_argument('headless')
-# driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe', options=webdriver_options)
 
 wait = WebDriverWait(driver, 10)
 
