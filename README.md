@@ -89,3 +89,6 @@ def idf(vocab, docs):
 def tfidf(v, d):
     return np.multiply(tf(v,d),idf(v, d))
 ```
+
+## License
+MIT
