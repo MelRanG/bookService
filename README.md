@@ -25,6 +25,11 @@
 - [Selenium] - 3.1
 - [jQuery] - 3.3.1
 
+And
+
+- [IntelliJ]
+- [Gradle]
+
 
 ## Recommend system
 - 본 시스템은 중간다리 역할을 하기 때문에 회원가입 유도가 어려움
