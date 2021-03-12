@@ -101,13 +101,27 @@ def tfidf(v, d):
 
 **결과**
 
-<img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG"> 
+<img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG">
 
 <img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897685-39287e00-8341-11eb-8d37-f9ecc20d30c6.PNG">
 
 <img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897855-8e648f80-8341-11eb-8892-05764aeff277.PNG">
 
 
+
+## 마치며
+
+추천 시스템의 경우 비슷한 도서끼리 추천이 돌고 도는 느낌을 받았습니다. 제가 생각한 원인으로는
+- 수집한 MBTI 데이터양의 부족
+- TF-IDF의 한계
+- 설계
+이 세 가지가 가장 큰 요인이라고 생각합니다. 추가로 실시간으로 크롤링 된 도서가 존재하더라도 MBTI 추천 시스템에는 즉시 적용되지는 않습니다.
+하지만 도서 보유 수에 집중하여 온갖 다양한 도서가 존재하는 도서 구독 시스템에 1차 필터링을 거친다는 점에서
+의의가 있다고 생각합니다.
+
+
+스프링으로 설계한 도서 정보 페이지 또한 보완 또는 추가할 점이 많습니다. 패스워드를 스프링 시큐리티로 처리하거나 검색한 도서 리스트 제공 등등
+추후에 보완할 예정입니다.
 
 ## License
 MIT
