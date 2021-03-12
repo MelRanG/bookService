@@ -39,6 +39,14 @@
 더 좋은 추천 라이브러리도 존재하지만 내부 동작 이해 없이 가져다 쓰는 것 보다 정확도는 조금
 부족해도 내부 동작을 이해할 수 있는 방식이 TF-IDF였기에 선택했습니다.
 
+
+
+**수집한 MBTI 키워드**
+
+![1](https://user-images.githubusercontent.com/62234293/110897024-06ca5100-8340-11eb-9b53-b4b8593fd9c5.PNG)
+
+
+
 Recommendations.py:
 
 ```
@@ -89,6 +97,8 @@ def idf(vocab, docs):
 def tfidf(v, d):
     return np.multiply(tf(v,d),idf(v, d))
 ```
+
+
 
 ## License
 MIT
