@@ -99,6 +99,11 @@ def tfidf(v, d):
 ```
 
 
+**결과**
+
+![2](https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG)
+![3](https://user-images.githubusercontent.com/62234293/110897685-39287e00-8341-11eb-8d37-f9ecc20d30c6.PNG)
+
 
 ## License
 MIT
