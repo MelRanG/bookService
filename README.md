@@ -101,8 +101,12 @@ def tfidf(v, d):
 
 **결과**
 
-![2](https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG)
-![3](https://user-images.githubusercontent.com/62234293/110897685-39287e00-8341-11eb-8d37-f9ecc20d30c6.PNG)
+<img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG"> 
+
+<img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897685-39287e00-8341-11eb-8d37-f9ecc20d30c6.PNG">
+
+<img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897855-8e648f80-8341-11eb-8892-05764aeff277.PNG">
+
 
 
 ## License
