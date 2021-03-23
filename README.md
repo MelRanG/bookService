@@ -1,5 +1,5 @@
 # Diagram
-![2](https://user-images.githubusercontent.com/62234293/112092626-3ea48480-8bdb-11eb-9c7e-37719785e370.PNG)
+![2](https://user-images.githubusercontent.com/62234293/112092924-e6ba4d80-8bdb-11eb-8516-84768c1a5cc3.PNG)
 
 # Run
 [![bookService](https://img.youtube.com/vi/p55YEyQ-RiQ/0.jpg)](https://www.youtube.com/watch?v=p55YEyQ-RiQ)
@@ -51,7 +51,7 @@ And
 
 
 
-**수집한 MBTI 키워드**
+**MBTI Data**
 
 ![1](https://user-images.githubusercontent.com/62234293/110897024-06ca5100-8340-11eb-9b53-b4b8593fd9c5.PNG)
 
@@ -109,7 +109,7 @@ def tfidf(v, d):
 ```
 
 
-**결과**
+**Result**
 
 <img width="450" alt="screen shot" src="https://user-images.githubusercontent.com/62234293/110897683-375eba80-8341-11eb-80d0-d6e2e8b91701.PNG">
 
