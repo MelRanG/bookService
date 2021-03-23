@@ -1,6 +1,7 @@
-# bookService
+# Diagram
+![2](https://user-images.githubusercontent.com/62234293/112092626-3ea48480-8bdb-11eb-9c7e-37719785e370.PNG)
 
-
+# Run
 [![bookService](https://img.youtube.com/vi/p55YEyQ-RiQ/0.jpg)](https://www.youtube.com/watch?v=p55YEyQ-RiQ)
 
  - 많은 도서 구독 서비스가 존재하지만 플랫폼 별 제공하는 도서의 종류가 천차만별 
@@ -32,6 +33,10 @@ And
 
 
 ## Recommend system
+
+![추천](https://user-images.githubusercontent.com/62234293/112092621-3cdac100-8bdb-11eb-9f17-162ba4c05ace.png)
+
+
 - 본 시스템은 중간다리 역할을 하기 때문에 회원가입 유도가 어려움
 - 그로인한 사용자 정보 수집 어려움 존재
 - 별도의 심리검사가 필요없이 주 타겟층인 20, 30 세대에 선풍적인 인기를 끄는 MBTI 선택
